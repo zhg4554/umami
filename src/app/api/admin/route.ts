@@ -2,6 +2,11 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+
+// 这行代码不需要执行，只要它存在，Vercel 的 NFT 分析器就会强制将该文件包含进运行环境
+const _trace_trap = path.join(process.cwd(), '/prod-ca-2021.crt');
+
+
 export const dynamic = 'force-dynamic'; // 禁用缓存，实时探测
 
 export async function GET() {
